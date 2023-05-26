@@ -1,0 +1,25 @@
+var audio = document.createElement('audio');
+audio.setAttribute('src', 'audio.mp3');
+audio.loop = 'true';
+setInterval(() => {
+    d = new Date();
+    h = d.getHours();
+    m = d.getMinutes();
+    s = d.getSeconds();
+    hrotation = 30 * h + m / 2;
+    mrotation = 6 * m;
+    srotation = 6 * s;
+
+    hour.style.transform = `rotate(${hrotation}deg)`;
+    minute.style.transform = `rotate(${mrotation}deg)`;
+    second.style.transform = `rotate(${srotation}deg)`;
+    if (m % 2 == 0) {
+        audio.play();
+    } else if (m % 2 != 0) {
+        audio.pause();
+    }
+
+
+}, 1000);
+
+
